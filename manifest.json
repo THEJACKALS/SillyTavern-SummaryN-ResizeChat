@@ -1,0 +1,11 @@
+{
+  "display_name": "Summary & Resize Chat",
+  "loading_order": 1,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "THEJACKALS",
+  "version": "1.0.0",
+  "homePage": ""
+}

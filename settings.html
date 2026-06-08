@@ -1,0 +1,180 @@
+<div class="inline-drawer" id="summary_resize_chat_settings">
+    <div class="inline-drawer-toggle inline-drawer-header">
+        <b class="flex1">Summary & Resize Chat</b>
+        <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+    </div>
+    <div class="inline-drawer-content">
+        <div class="summary-resize-settings-grid">
+            <label>
+                <span>API Mode</span>
+                <select id="summary_resize_api_mode" class="text_pole">
+                    <option value="current_st">Current SillyTavern API</option>
+                    <option value="horde">AI Horde</option>
+                    <option value="lm_studio">LM Studio</option>
+                    <option value="openai_compatible">OpenAI-Compatible</option>
+                    <option value="llamacpp">llama.cpp</option>
+                </select>
+            </label>
+            <label>
+                <span>Summary language</span>
+                <select id="summary_resize_language" class="text_pole">
+                    <option value="Auto">Auto</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="English">English</option>
+                </select>
+            </label>
+            <label>
+                <span>Summary length</span>
+                <select id="summary_resize_detail_level" class="text_pole">
+                    <option value="Very Short">Very Short</option>
+                    <option value="Short">Short</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Detailed">Detailed</option>
+                </select>
+            </label>
+            <label>
+                <span>Output mode</span>
+                <select id="summary_resize_output_mode" class="text_pole">
+                    <option value="Narrative Summary">Narrative Summary</option>
+                    <option value="Bullet Memory">Bullet Memory</option>
+                    <option value="Roleplay Continuity">Roleplay Continuity</option>
+                    <option value="Technical/Fact Only">Technical/Fact Only</option>
+                </select>
+            </label>
+            <label>
+                <span>Replace strategy</span>
+                <select id="summary_resize_replace_strategy" class="text_pole">
+                    <option value="replace">Replace selected messages with one summary message</option>
+                    <option value="insert_before">Insert summary before selection and keep originals</option>
+                    <option value="insert_after">Insert summary after selection and keep originals</option>
+                </select>
+            </label>
+            <label>
+                <span>Backup behavior</span>
+                <select id="summary_resize_backup_behavior" class="text_pole">
+                    <option value="always">Always backup before modifying</option>
+                    <option value="ask">Ask before backup</option>
+                </select>
+            </label>
+            <label>
+                <span>Summary author name</span>
+                <input id="summary_resize_author_name" class="text_pole" type="text" value="Summary" placeholder="Summary">
+            </label>
+        </div>
+
+        <div id="summary_resize_backend_panel" class="summary-resize-backend-panel">
+            <div class="summary-resize-provider-fields" data-provider="lm_studio">
+                <h4>LM Studio</h4>
+                <label>
+                    <span>Base URL</span>
+                    <input id="summary_resize_lm_base_url" class="text_pole" type="text" placeholder="http://127.0.0.1:1234/v1">
+                </label>
+                <label>
+                    <span>Model ID</span>
+                    <input id="summary_resize_lm_model" class="text_pole" type="text" list="summary_resize_lm_models" placeholder="Auto-detect or enter manually">
+                    <datalist id="summary_resize_lm_models"></datalist>
+                </label>
+            </div>
+
+            <div class="summary-resize-provider-fields" data-provider="openai_compatible">
+                <h4>OpenAI-Compatible</h4>
+                <label>
+                    <span>Base URL</span>
+                    <input id="summary_resize_oai_base_url" class="text_pole" type="text" placeholder="http://127.0.0.1:1234/v1">
+                </label>
+                <label>
+                    <span>API Key</span>
+                    <input id="summary_resize_oai_api_key" class="text_pole" type="password" autocomplete="off" placeholder="Optional">
+                </label>
+                <label>
+                    <span>Model ID</span>
+                    <input id="summary_resize_oai_model" class="text_pole" type="text" list="summary_resize_oai_models" placeholder="Refresh models or enter manually">
+                    <datalist id="summary_resize_oai_models"></datalist>
+                </label>
+            </div>
+
+            <div class="summary-resize-provider-fields" data-provider="llamacpp">
+                <h4>llama.cpp</h4>
+                <label>
+                    <span>Base URL</span>
+                    <input id="summary_resize_llama_base_url" class="text_pole" type="text" placeholder="http://127.0.0.1:8080/v1">
+                </label>
+                <label>
+                    <span>Model ID</span>
+                    <input id="summary_resize_llama_model" class="text_pole" type="text" list="summary_resize_llama_models" placeholder="summary-model">
+                    <datalist id="summary_resize_llama_models"></datalist>
+                </label>
+                <label>
+                    <span>Context Warning Threshold</span>
+                    <input id="summary_resize_llama_context_threshold" class="text_pole" type="number" min="1000" step="1000">
+                </label>
+            </div>
+
+            <div class="summary-resize-api-controls">
+                <label>
+                    <span>Temperature</span>
+                    <input id="summary_resize_temperature" class="text_pole" type="number" min="0" max="2" step="0.05">
+                </label>
+                <label>
+                    <span>Request timeout ms</span>
+                    <input id="summary_resize_timeout" class="text_pole" type="number" min="5000" step="5000">
+                </label>
+                <label>
+                    <span>Max retries</span>
+                    <input id="summary_resize_max_retries" class="text_pole" type="number" min="0" max="5" step="1">
+                </label>
+                <label class="checkbox_label flexNoGap summary-resize-checkbox-row">
+                    <input id="summary_resize_chunked" type="checkbox">
+                    <span>Chunked summarization for long selections</span>
+                </label>
+                <label>
+                    <span>Chunk character limit</span>
+                    <input id="summary_resize_chunk_limit" class="text_pole" type="number" min="2000" step="1000">
+                </label>
+                <label>
+                    <span>Max tokens: Very Short / Short / Medium / Detailed</span>
+                    <div class="summary-resize-token-row">
+                        <input id="summary_resize_tokens_very_short" class="text_pole" type="number" min="64" step="64">
+                        <input id="summary_resize_tokens_short" class="text_pole" type="number" min="64" step="64">
+                        <input id="summary_resize_tokens_medium" class="text_pole" type="number" min="64" step="64">
+                        <input id="summary_resize_tokens_detailed" class="text_pole" type="number" min="64" step="64">
+                    </div>
+                </label>
+            </div>
+
+            <div class="flex-container">
+                <div id="summary_resize_test_connection" class="menu_button">
+                    <i class="fa-solid fa-plug-circle-check"></i>
+                    <span>Test Connection</span>
+                </div>
+                <div id="summary_resize_refresh_models" class="menu_button">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span>Refresh Models</span>
+                </div>
+                <div id="summary_resize_send_test_prompt" class="menu_button">
+                    <i class="fa-solid fa-vial"></i>
+                    <span>Send Test Summary Prompt</span>
+                </div>
+            </div>
+            <div id="summary_resize_connection_status" class="summary-resize-connection-status"></div>
+        </div>
+
+        <label class="checkbox_label flexNoGap">
+            <input id="summary_resize_dry_run" type="checkbox">
+            <span>Dry Run: preview and backup only, do not save chat changes</span>
+        </label>
+        <div class="summary-resize-warning">
+            If AI Horde is active, selected messages may be sent to Horde workers. Avoid private or sensitive text.
+        </div>
+        <div class="flex-container">
+            <div id="summary_resize_start_button" class="menu_button">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Summarize Chat</span>
+            </div>
+            <div id="summary_resize_export_button" class="menu_button">
+                <i class="fa-solid fa-file-export"></i>
+                <span>Export Selection</span>
+            </div>
+        </div>
+    </div>
+</div>
