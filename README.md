@@ -6,6 +6,12 @@ Local SillyTavern extension for selecting several chat bubbles, summarizing them
 
 Place this folder at:
 
+- In the SillyTavern Extension Manager, use "Install from URL" and paste the following Git URL: 
+```https://github.com/THEJACKALS/SillyTavern-ImageEmbedExpressions.git```
+- Or... In Manual Options, Add this extension to the program in your SillyTavern file at 
+```"SillyTavern\data\default-user\extensions\SillyTavern-ImageEmbedExpressions"```
+
+OR
 ```txt
 E:\AI\SillyTavern\data\default-user\extensions\summary-resize-chat
 ```
