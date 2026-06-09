@@ -22,13 +22,162 @@ Restart or reload SillyTavern, then enable the extension if needed.
 
 1. Open a character or group chat.
 <img width="1123" height="869" alt="image" src="https://github.com/user-attachments/assets/24bb0c3b-1b6f-4d3d-a508-1b1a7db8929a" />
+
 2. Choose an `API Mode` in extension settings if you do not want to use the current SillyTavern API.
 <img width="554" height="868" alt="image" src="https://github.com/user-attachments/assets/22a4978d-8bb7-4a29-9872-40d807a4e1fa" />
+
 3. Click `Summarize Chat` in the wand/extensions menu, or use the same button inside extension settings.
+<img width="1171" height="442" alt="Capture1" src="https://github.com/user-attachments/assets/56a1b5d5-5200-48c9-91b4-8b67586ac3f4" />
+
 4. Click chat bubbles to select them. Shift-click selects a range.
-5. Press `Summarize`.
-6. Review and edit the generated summary.
-7. Choose replace or insert from the preview modal.
+<img width="1134" height="824" alt="Capture2" src="https://github.com/user-attachments/assets/d87f7503-d313-4751-ab69-3023195b307e" />
+
+6. Press `Summarize`.
+<img width="1094" height="622" alt="image" src="https://github.com/user-attachments/assets/912da193-e86e-4235-8dde-bdd285047239" />
+   
+8. Review and edit the generated summary.
+<img width="1008" height="628" alt="image" src="https://github.com/user-attachments/assets/d5df8d89-4651-4618-8b15-e272ce5f6ae0" />
+
+9. Choose replace or insert from the preview modal
+<img width="1008" height="628" alt="image" src="https://github.com/user-attachments/assets/d8b0e498-44df-4436-886e-de76e687782b" />
+
+After the summary is generated, a **Summary Preview** modal will appear.
+In this modal, you can review, edit, regenerate, copy, replace, or insert the generated summary.
+
+### 9.1 Regenerate
+
+Click **Regenerate** if you are not satisfied with the current summary.
+
+Use this when:
+
+* the summary is too long,
+* the summary is too short,
+* the summary misses important context,
+* the summary includes unnecessary details,
+* the summary sounds like roleplay continuation instead of a proper summary.
+
+When clicked, the extension will send the selected messages to the chosen AI backend again and generate a new summary.
+
+The selected chat messages will not be changed yet.
+Changes only happen after you click **Replace Selected Messages** or **Insert Only**.
+
+### 9.2 Copy
+
+Click **Copy** to copy the generated summary to your clipboard.
+
+Use this if you want to:
+
+* save the summary manually,
+* paste it into Author’s Note,
+* paste it into Memory/Lorebook,
+* edit it somewhere else,
+* compare multiple generated summaries.
+
+This button does not modify the chat.
+
+### 9.3 Replace Selected Messages
+
+Click **Replace Selected Messages** if you want to replace all selected chat bubbles with one summary bubble.
+
+This is the main compression feature.
+
+Example:
+
+```txt
+Before:
+[Message 1]
+[Message 2]
+[Message 3]
+[Message 4]
+[Message 5]
+
+After:
+[Compressed Summary]
+```
+
+Use this when the selected messages are:
+
+* low-value,
+* repetitive,
+* too long,
+* messy,
+* mostly filler,
+* unnecessary for the main story,
+* useful only as a compressed continuity note.
+
+Before replacing, the extension will try to create a backup of the current chat.
+
+If server-side backup fails, the extension may start a browser download backup instead and ask whether you want to continue.
+
+Choose:
+
+* **Continue** to proceed using the browser-downloaded backup.
+* **Abort** to cancel the replacement and keep the original chat unchanged.
+
+After replacement, the old selected messages should be removed from the actual chat data and replaced with one summary bubble.
+
+### 9.4 Insert Only
+
+Click **Insert Only** if you want to add the summary into the chat without deleting the selected messages.
+
+Example:
+
+```txt
+Before:
+[Message 1]
+[Message 2]
+[Message 3]
+
+After:
+[Message 1]
+[Message 2]
+[Message 3]
+[Compressed Summary]
+```
+
+Use this when:
+
+* you want to test the summary first,
+* you are not ready to delete the original messages,
+* the selected messages are important but still need a short summary,
+* you want to manually compare the original chat with the generated summary.
+
+This mode is safer than replacement because it does not remove any selected messages.
+
+### 9.5 Cancel
+
+Click **Cancel** to close the preview modal without changing the chat.
+
+Use this when:
+
+* the summary is not useful,
+* you selected the wrong messages,
+* you want to adjust settings first,
+* you changed your mind.
+
+Cancel will not replace, insert, or delete any chat messages.
+
+### Recommended Usage
+
+For cleaning low-value chat without breaking story continuity, use:
+
+```txt
+Regenerate if needed
+→ Review and edit the summary manually
+→ Replace Selected Messages
+→ Confirm backup
+→ Refresh/check the chat
+```
+
+For safer testing, use:
+
+```txt
+Regenerate if needed
+→ Insert Only
+→ Review the inserted summary in chat
+→ Manually decide whether to delete old messages later
+```
+
 
 The selected bubbles use a blue border/overlay so they do not conflict with SillyTavern's red Delete Messages mode.
 
