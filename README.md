@@ -21,7 +21,9 @@ Restart or reload SillyTavern, then enable the extension if needed.
 ## Usage
 
 1. Open a character or group chat.
+<img width="1123" height="869" alt="image" src="https://github.com/user-attachments/assets/24bb0c3b-1b6f-4d3d-a508-1b1a7db8929a" />
 2. Choose an `API Mode` in extension settings if you do not want to use the current SillyTavern API.
+<img width="554" height="868" alt="image" src="https://github.com/user-attachments/assets/22a4978d-8bb7-4a29-9872-40d807a4e1fa" />
 3. Click `Summarize Chat` in the wand/extensions menu, or use the same button inside extension settings.
 4. Click chat bubbles to select them. Shift-click selects a range.
 5. Press `Summarize`.
