@@ -36,8 +36,6 @@ Restart or reload SillyTavern, then enable the extension if needed.
 <img width="1094" height="622" alt="image" src="https://github.com/user-attachments/assets/912da193-e86e-4235-8dde-bdd285047239" />
    
 8. Review and edit the generated summary.
-<img width="1008" height="628" alt="image" src="https://github.com/user-attachments/assets/d5df8d89-4651-4618-8b15-e272ce5f6ae0" />
-
 9. Choose replace or insert from the preview modal
 <img width="1008" height="628" alt="image" src="https://github.com/user-attachments/assets/d8b0e498-44df-4436-886e-de76e687782b" />
 
